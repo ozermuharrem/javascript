@@ -89,7 +89,7 @@ const at = function(x,y){
 
 console.log(at(20)); // ==> 20 
 
-/* js eas 6 ile gelen yenilik ile */
+/* js es6 ile gelen yenilik ile */
 
 const bet = function(j = 0, k = 0){
     var l = j+k;
@@ -103,13 +103,21 @@ console.log(bet(41)); // ==> 41 sonuç 41 çıktı
 // k degerine hangi numarayı atarsak o  numara ile işlem yapar 
 
 
-// ARGS
+// ARGS dışarıdan veri alma 
+
+// farklı parametreler gönderildiğinde kullanılır 
+
+function args(){
+    console.log(arguments);
+}
+
+args(10,20,30); // dizi dönderdi 
 
 function sumAll(){
     var tpl = 0;
 
-    for(let i = 0 ; i < arguments.length; i++){
-        tpl += arguments[i];
+    for(let i = 0 ; i < arguments.length; i++){ // i argümanın sayısı kadar dönecek
+        tpl += arguments[i]; // dışarıdan atanan değerlerin toplamı 
     }
     return tpl;
 }

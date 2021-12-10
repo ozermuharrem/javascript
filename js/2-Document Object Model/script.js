@@ -149,4 +149,4 @@ kel = document.querySelectorAll('li');
 
 kel.forEach(function(item,index){
     item.textContent=`${index}-to do item`
-}); // forEach kullanımı 
+}); // forEach kullanımı örnegi

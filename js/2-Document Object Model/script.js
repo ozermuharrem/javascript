@@ -149,4 +149,75 @@ kel = document.querySelectorAll('li');
 
 kel.forEach(function(item,index){
     item.textContent=`${index}-to do item`
-}); // forEach kullanımı örnegi
+}); // forEach kullanımı örnegi 
+
+// *** SAYFA ÜZERİNE YENİ ELEMNT OLUŞTURMA 
+
+// creating Elements
+
+const li = document.createElement('li');
+
+li.className='list-group-item list-group-item-secondary';
+
+li.setAttribute('title','new item');
+li.setAttribute('data-id','5');
+
+// text node oluşturmak içim 
+
+const text = document.createTextNode('new item');
+
+li.appendChild(text);
+
+const a = document.createElement('a'); // a etiketi oluşturma
+
+a.setAttribute('href','#'); // a etiketi href ekleme
+
+a.className='delete-item float-right'; // a etiketi class ekleme
+
+a.innerHTML= '<i class ="fas fa_times"></i>'; // a etiketi içine i etiketi oluşturma 
+
+li.appendChild(a); // li etiketi altına a etiketi ekleme 
+
+document.querySelector('#task-list').appendChild(li); // ul etiketin altına li ekleme 
+
+console.log(li);
+
+// ETİKET SİLEM VE DEĞİŞTİRME İŞLEMİ 
+
+//REMOVING & CHANGING NODES
+
+const taskList = document.querySelector('#task-list'); // id si task-list olan etikete yani tüm ul etiketine ulaştık 
+
+//removing element 
+
+// taskList.remove(); // ul etiketi silinir
+
+// taskList.childNodes[1].remove(); // alt eleman silme
+
+// taskList.removeChild(taskList.children[3]); // taskList listesinin çocuklarından 3 üncüsünü silme
+
+// removing attribute 
+
+// taskList.children[1].removeAttribute('class'); // attribute silme class attribute si silindi 1.çocugun 
+
+/* for(let i = 0 ; i < taskList.children.length ; i ++){
+    taskList.children[i].removeAttribute('class');
+} */
+
+// replacing Elements 
+
+const cardHeader = document.querySelector('.card-header'); // ilk sıra daki card header classı olanları seçtik 
+
+//create element yeni element ekleme işlemi değitirmek için 
+
+const h2 = document.createElement('h2'); // h2 etiketi oluşturma 
+
+h2.setAttribute('class','card-header'); // class ı card-header olan bir attribute ekleme 
+
+h2.appendChild(document.createTextNode('h2 ekleme'));
+
+const parent = document.querySelector('.card');
+
+parent.replaceChild(h2,cardHeader);
+
+console.log(cardHeader);

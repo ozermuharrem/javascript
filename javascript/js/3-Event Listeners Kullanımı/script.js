@@ -20,7 +20,7 @@ btn.addEventListener('click',function(e){
     val = e.target; // hangi butonun tıklandığını gösterir 
     val = e.target.id; // tıklanan objenin id si 
     val = e.target.classList; // class listesi
-    val = e.type; // 
+    val = e.type; // tipi
 
     console.log(val);
 
@@ -39,3 +39,9 @@ btn.addEventListener('click',function(e){
 // function btnClick2(){
 //     console.log('btn 2 clicked');
 // }
+
+// a etiketine tıklandığı zaman otomatik olarak olarak sayfa yenileniyor ve scroll bar en üste taşınıyor. 
+
+// bunun önünen geçmek için fonksiyonun içerisine "preventDefault();" yazmamız lazım 
+
+// bu durumda scroll bar kendisini yukarı atmayacak. 

@@ -45,3 +45,7 @@ btn.addEventListener('click',function(e){
 // bunun önünen geçmek için fonksiyonun içerisine "preventDefault();" yazmamız lazım 
 
 // bu durumda scroll bar kendisini yukarı atmayacak. 
+
+// "click" seçilen elemana tıklama olunca 
+
+// 

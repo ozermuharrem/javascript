@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertAdjacentHTML()</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        Todo App
+                    </div> 
+                </div>
+                <div class="card mt-3">
+                    <ul id="task-list" class="list-group list-group-flush">
+                        <!-- 
+                        <li class="task list-group-item">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="1">
+                                <label for="1" class="form-check-label">Görev 1</label>
+                            </div>
+                        </li>
+                        
+                        <li class="task list-group-item">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="2">
+                                <label for="2" class="form-check-label">Görev 2</label>
+                            </div>
+                        </li>
+                        <li class="task list-group-item">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="3">
+                                <label for="3" class="form-check-label">Görev 3</label>
+                            </div>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script>
+        
+        console.log("-------------- DOM ÜZÜRİNDE ELEMAN EKLEME -----------------");
+
+        console.log("insertAdjacentHTML Kullanmak için bir iskelet oluşturuyoruz \n insertAdjacentHTML() fonksiyonu iki tane paremetre alır.")
+        console.log("1.Paremetre eklenecek olan şablonun nereye ekleneceği");
+        console.log("afterbegin: ögenin başlangıcından sonra(ilk çocuk");
+        console.log("afterend: seçilen kapsayıcı elemandan öncesi ");
+        console.log("beforbegin: seçilen kapsayıcı elemandan sonrası  ");
+        console.log("beforeend: seçilen kapsayıcı elemanın içinde ki en son elemana ekler");
+
+
+        let sonuc;
+
+        let ul = document.querySelector("#task-list");
+
+        let gorevListesi = [
+            {"id": 1, gorevAdi: "Görev 1"},
+            {"id": 2, gorevAdi: "Görev 2"},
+            {"id": 3, gorevAdi: "Görev 3"},
+            {"id": 4, gorevAdi: "Görev 4"},
+
+        ];
+
+        // let count = ul.children.length; // ul etiketi altında ki li etiketlerinin sayısını döner
+
+        for (let index of gorevListesi) {
+            let li = `
+            <li class="task list-group-item">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="${index.id}">
+                    <label for="${index.id}" class="form-check-label">${index.gorevAdi}</label>
+                </div>
+            </li>
+        `;  
+        ul.insertAdjacentHTML("beforeend",li) ;
+        }
+
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>
